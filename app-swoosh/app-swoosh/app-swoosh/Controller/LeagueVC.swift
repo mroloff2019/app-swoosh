@@ -47,6 +47,12 @@ class LeagueVC: UIViewController {
         nextBtn.isEnabled = true
         
     }
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let skillVC = segue.destination as? SkillVC {
+        skillVC.player = player!
+            
+            // prepare for segue is always called before view did load on destination view controller. 
+        }
+    }
     
 }
